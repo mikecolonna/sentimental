@@ -1,0 +1,19 @@
+{
+  "name": "sentimental",
+  "version": "1.0.0",
+  "description": "Web app that uses machine-learning to analyze a user's social media feed and determine if they are exhibiting signs of mental illness, providing resources and help accordingly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikecolonna/sentimental.git"
+  },
+  "author": "Ana Zeneli, Vanessa Moody, Michael Colonna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikecolonna/sentimental/issues"
+  },
+  "homepage": "https://github.com/mikecolonna/sentimental#readme"
+}
