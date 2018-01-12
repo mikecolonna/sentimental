@@ -9013,6 +9013,10 @@ var _Header = __webpack_require__(143);
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _Navigator = __webpack_require__(301);
+
+var _Navigator2 = _interopRequireDefault(_Navigator);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9036,6 +9040,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(_Navigator2.default, null),
                 _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(_UserInfo2.default, null)
             );
@@ -10479,11 +10484,11 @@ var UserInfo = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { id: 'UserInfo-container' },
                 _react2.default.createElement(
                     'p',
                     null,
-                    'Welcome to Sentimental! Input a Twitter username:'
+                    'Input a Twitter username:'
                 ),
                 _react2.default.createElement('input', { id: 'username', type: 'text' })
             );
@@ -10539,24 +10544,33 @@ var Header = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     _reactBootstrap.Jumbotron,
-                    { className: 'Header-jumbo' },
+                    null,
                     _react2.default.createElement(
-                        'h1',
-                        null,
-                        'Sentimental.'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Welcome to Sentimental, a web app that analyzes your social media feeds for signs of mental illness.'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
+                        'div',
+                        { id: 'Header-container' },
                         _react2.default.createElement(
-                            _reactBootstrap.Button,
+                            'h1',
                             null,
-                            'Get started'
+                            'Sentimental.'
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'Welcome to Sentimental, a web app that analyzes your social media feeds for signs of mental illness.'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                _reactBootstrap.Button,
+                                { bsStyle: 'primary', id: 'get-started' },
+                                'Get started'
+                            ),
+                            _react2.default.createElement(
+                                _reactBootstrap.Button,
+                                { id: 'learn-more' },
+                                'Learn more'
+                            )
                         )
                     )
                 )
@@ -38774,6 +38788,84 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(144);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Navigator = function (_React$Component) {
+    _inherits(Navigator, _React$Component);
+
+    function Navigator() {
+        _classCallCheck(this, Navigator);
+
+        return _possibleConstructorReturn(this, (Navigator.__proto__ || Object.getPrototypeOf(Navigator)).apply(this, arguments));
+    }
+
+    _createClass(Navigator, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactBootstrap.Navbar,
+                null,
+                _react2.default.createElement(
+                    _reactBootstrap.Navbar.Header,
+                    null,
+                    _react2.default.createElement(
+                        _reactBootstrap.Navbar.Brand,
+                        null,
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            'Sentimental'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _reactBootstrap.Nav,
+                    null,
+                    _react2.default.createElement(
+                        _reactBootstrap.NavItem,
+                        { eventKey: 1 },
+                        'Get started'
+                    ),
+                    _react2.default.createElement(
+                        _reactBootstrap.NavItem,
+                        { eventKey: 2 },
+                        'About us'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Navigator;
+}(_react2.default.Component);
+
+exports.default = Navigator;
 
 /***/ })
 /******/ ]);
