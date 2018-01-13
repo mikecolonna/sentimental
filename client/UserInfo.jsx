@@ -1,4 +1,5 @@
 import React from 'react';
+import tone_analyzer from './tone_analyzer'
 
 export default class UserInfo extends React.Component {
 

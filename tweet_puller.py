@@ -1,6 +1,6 @@
 import tweepy # replace all of these
 import numpy as np
-import json
+import json, sys
 
 consumer_key = "1Q29XiMI0xvPfNrVEdxrDkieb"
 consumer_secret = "6Z4lLiNUOGdCkr1c37m7ZaVdZcfoGnbq8NiemjorKDgIcvw040"
@@ -21,7 +21,8 @@ api = tweepy.API(auth)
 
  #The Twitter user who we want to get tweets from
  # REPLACE WITH ON-CLICK COMMAND FRPM
-name = "joewilliams_tew"
+# user
+name = json.loads(sys.stdin.readlines()[0])
  # Number of tweets to pull
 tweetCount = 100
  # Calling the user_timeline function with our parameters
