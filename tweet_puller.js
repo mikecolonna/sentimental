@@ -1,6 +1,6 @@
 var tweepy = require('tweepy'); // replace all of these
 var np = require('numpy');
-var json, = require('json,');
+var json = require('json');
 
 consumer_key = '1Q29XiMI0xvPfNrVEdxrDkieb';
 consumer_secret = '6Z4lLiNUOGdCkr1c37m7ZaVdZcfoGnbq8NiemjorKDgIcvw040';
