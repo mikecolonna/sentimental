@@ -68,5 +68,5 @@ function getUserName (name) {
 // getUserName(name)
 
 module.exports = {
-  name : getUserName
+  getUserData : getUserName
 }

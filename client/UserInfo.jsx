@@ -1,5 +1,5 @@
 import React from 'react';
-import tone_analyzer from './tone_analyzer'
+import { getUserData } from '../server/tone_analyzer.js'
 
 export default class UserInfo extends React.Component {
 
@@ -8,7 +8,7 @@ export default class UserInfo extends React.Component {
 
         console.log('submitted!');
         // send username data
-
+        console.log(getUserData(user));
     }
 
     render() {
