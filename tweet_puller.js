@@ -1,53 +1,55 @@
-var tweepy = require('tweepy'); // replace all of these
-var np = require('numpy');
-var json = require('json,');
+var express = require('express');
+var fs      = require('fs')
+var Twitter = require('twitter');
+var router = express.Router();
 
-consumer_key = '1Q29XiMI0xvPfNrVEdxrDkieb';
-consumer_secret = '6Z4lLiNUOGdCkr1c37m7ZaVdZcfoGnbq8NiemjorKDgIcvw040';
-access_token = '811323013-OS2XFILfROSixWVlz761tCFS6rjlXORU45IHVUeQ';
-access_token_secret = 'VD0MWHzaQNFCtpFzZpB1wngMCr2I6Gr2de1H6UmngYSzf';
+var client = new Twitter ({
+  consumer_key: '1Q29XiMI0xvPfNrVEdxrDkieb',
+  consumer_secret: '6Z4lLiNUOGdCkr1c37m7ZaVdZcfoGnbq8NiemjorKDgIcvw040',
+  access_token_key: '811323013-OS2XFILfROSixWVlz761tCFS6rjlXORU45IHVUeQ',
+  access_token_secret: 'VD0MWHzaQNFCtpFzZpB1wngMCr2I6Gr2de1H6UmngYSzf'
+});
 
-// PART 1: YOUR TIMELINE
-// Creating the authentication object
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret);
-// Setting your access token and secret
-auth.set_access_token(access_token, access_token_secret);
- // Creating the API object while passing in auth information
-api = tweepy.API(auth);
+var screen_name = ' '
 
-// PART 2: TWEETS FROM A SPECIFIC USER
-// Creating the API object while passing in auth information
-api = tweepy.API(auth);
 
-//The Twitter user who we want to get tweets from;
-// REPLACE WITH ON-CLICK COMMAND FRPM
-// user
-name = json.loads(sys.stdin.readlines()[0]);
- // Number of tweets to pull
-tweetCount = 100;
- // Calling the user_timeline function with our parameters
-results = api.user_timeline(id=name, count=tweetCount);
-tweets = [];
+var params = {screen_name: 'beyonce', include_rts: 'false', count : 100};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  if (!error) {
+    var tweet_texts = tweets.map( (tweet) => {
+      return tweet.text
 
-// foreach through all tweets pulled
-for (tweet in results) {
-    tweets = np.push(tweets, tweet.text);
+    })
+
+    var text = {"text": tweet_texts.join('')}
+
+    var tone_analyzer = new ToneAnalyzerV3({
+      username: "657ff540-0f0e-4398-8e2b-c17bae7ccc67",
+      password: "QgCV0WFkbB32",
+
+      version_date: '2017-09-21'
+    });
+
+    var params = {
+      'tone_input': text,
+      'content_type': 'application/json'
+    };
+
+    tone_analyzer.tone(params, function(error, response) {
+      if (error)
+      console.log('error:', error);
+      else
+      console.log("Overall tone: ")
+      var response_tones = response.document_tone.tones
+      // tones.push(response_tones)
+
+      for(i of response.document_tone.tones){
+        tones[i.tone_name] =  i.score
+      }
+      // console.log(i.tone_name, i.score)
+      // console.log(JSON.stringify(response, null, 2))
+      console.log(tones)
+    }
+  )
 }
-tweetsJSON = ' '.join(tweets);
-
-info = {};
-info['username'] = tweet.user.screen_name;
-info['location'] = tweet.user.location;
-
-console.log (json.dumps(info));
-
-data = {};
-
-data['text'] = tweetsJSON;
-
-
-file_path = 'tone.json' // your path variable
-
-//with open(file_path, 'w') as outfile) {
-//    json.dump(data , outfile);
-//}
+});
