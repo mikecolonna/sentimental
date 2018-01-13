@@ -1,0 +1,27 @@
+.jumbotron {
+    background-color: #f9577d;
+    font-family: "Futura", sans-serif;
+    color: white;
+}
+
+.navbar {
+    background-color: #f9577d;
+    border-width: 0px;
+    border-radius: 0px;
+}
+
+.nav > li {
+    color: white;
+}
+
+#Header-container {
+    margin-left: 10px;
+}
+
+#UserInfo-container {
+    margin-left: 10px;
+}
+
+#learn-more {
+    margin-left: 10px;
+}
