@@ -1,15 +1,15 @@
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
-var name = "beyonce"
+var name = "BCA_adimel"
 function getUserName (name) {
 
   var spawn = require('child_process').spawn,
       py    = spawn('python', ['tweet_puller.py']),
-      data = [],
+      data  = [],
       dataString = '',
-      username = '',
+      username   = '',
       location   = '',
-      tones = [] ,
+      tones      = [] ,
       tweets     ='';
 
       py.stdin.write(JSON.stringify(name));
