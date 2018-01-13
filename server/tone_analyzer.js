@@ -35,3 +35,7 @@ tone_analyzer.tone(params, function(error, response) {
 
 py.stdin.write(JSON.stringify(data));
 py.stdin.end();
+
+module.exports = {
+    toneAnalyzer: tone_analyzer
+};

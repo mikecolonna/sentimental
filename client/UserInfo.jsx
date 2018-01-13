@@ -7,6 +7,7 @@ export default class UserInfo extends React.Component {
 
         console.log('submitted!');
         // send username data
+
     }
 
     render() {
