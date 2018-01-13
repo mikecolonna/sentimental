@@ -1,5 +1,6 @@
 import React from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
+import UserInfo from './UserInfo.jsx';
 
 export default class Header extends React.Component {
     render() {
@@ -12,7 +13,7 @@ export default class Header extends React.Component {
                         Welcome to Sentimental, a web app that analyzes your social media feeds for signs of mental illness.
                         </p>
                         <span>
-                            <Button bsStyle='primary' id='get-started'>Get started</Button>
+                            <UserInfo />
                             <Button id='learn-more'>Learn more</Button>
                         </span>
                     </div>

@@ -8,9 +8,10 @@
     background-color: #f9577d;
     border-width: 0px;
     border-radius: 0px;
+    margin: 0px;
 }
 
-.nav > li {
+.navbar-default * {
     color: white;
 }
 
@@ -19,9 +20,5 @@
 }
 
 #UserInfo-container {
-    margin-left: 10px;
-}
-
-#learn-more {
-    margin-left: 10px;
+    margin-right: 10px;
 }
