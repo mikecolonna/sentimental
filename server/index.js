@@ -4,13 +4,17 @@ var app = express();
 var chalk = require('chalk');
 var volleyball = require('volleyball');
 var bodyParser = require('body-parser');
+var routes = require('./routes');
 
 app.use(volleyball); // logging middleware
 app.use(bodyParser.json()); // body parsing middleware
+app.use('/api', routes);
 
 //app.use('/api', require('./api')); // api routes
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
+//app.use()
 
 app.use('*', function (req, res) {
   res.sendFile(path.join(__dirname, '..', 'public/index.html'))

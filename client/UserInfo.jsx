@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-//import { getUserData } from '../server/tone_analyzer.js'
+import axios from 'axios';
+//import { getInfo } from './tweet_puller.js'
 
 export default class UserInfo extends React.Component {
     constructor() {
@@ -26,11 +27,19 @@ export default class UserInfo extends React.Component {
     }
 
     submitHandler() {
-        const user = document.getElementById('username').value;
+        const username = document.getElementById('twit-username').value;
 
-        console.log('submitted!');
+        console.log('submitted!' + username);
         // send username data
-        console.log(getUserData(user));
+        axios.post('/api/tweets', {
+            user: username
+            })
+            .then(function(res) {
+                console.log(res.data);
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
     }
 
     render() {
