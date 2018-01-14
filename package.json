@@ -44,6 +44,9 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
+
+    "twit": "^2.2.9",
+
     "twitter": "^1.7.1",
     "volleyball": "^1.4.1",
     "watson-developer-cloud": "^3.0.3",
