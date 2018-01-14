@@ -30,7 +30,7 @@ export default class UserInfo extends React.Component {
 
         console.log('submitted!');
         // send username data
-        //console.log(getUserData(user));
+        console.log(getUserData(user));
     }
 
     render() {
@@ -43,12 +43,31 @@ export default class UserInfo extends React.Component {
                         <Modal.Title>
                             Let's get started
                         </Modal.Title>
+                        <span>Enter your info!</span>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Input a Twitter username:</p>
-                        <input id='username' type='text' />
-                        <input id='submit' type='submit' onClick={this.submitHandler} />
+                    <Modal.Title>
+                        Twitter
+                    </Modal.Title>
+                        <p>Username</p>
+                        <input id='twit-username' type='text' />
+                        <p>Password</p>
+                        <input id='twit-pass' type='text' />
                     </Modal.Body>
+                    <Modal.Body>
+                    <Modal.Title>
+                        Facebook
+                    </Modal.Title>
+                        <p>Username</p>
+                        <input id='fb-username' type='text' />
+                        <p>Password</p>
+                        <input id='fb-pass' type='text' />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button id='submit' bsStyle='primary' onClick={this.submitHandler}>
+                        Submit
+                        </Button>
+                    </Modal.Footer>
                 </Modal>
             </div>
         )
