@@ -13,6 +13,7 @@
 
 .navbar-default * {
     color: white;
+    margin: 0px;
 }
 
 #Header-container {
