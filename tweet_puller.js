@@ -1,12 +1,12 @@
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
-var express = require('express');
-var fs      = require('fs')
-var Twitter = require('twitter');
-var username   = '',
-location   = '',
-tones      = [] ,
-tweets     ='';
+var express  = require('express');
+var fs       = require('fs');
+var Twitter  = require('twitter');
+var username = '',
+location     = '',
+tones        = [],
+tweets       ='';
 
 var router = express.Router();
 
@@ -41,6 +41,8 @@ function clickHandler (username){
         'content_type': 'application/json'
       };
 
+      // Analyzing twitter feed
+
       tone_analyzer.tone(params, function(error, response) {
         if (error)
         console.log('error:', error);
@@ -52,8 +54,6 @@ function clickHandler (username){
         for(i of response.document_tone.tones){
           tones[i.tone_name] =  i.score
         }
-        // console.log(i.tone_name, i.score)
-        // console.log(JSON.stringify(response, null, 2))
         console.log(tones)
       }
     )
