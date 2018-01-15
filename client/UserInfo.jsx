@@ -63,15 +63,6 @@ render() {
     <p>Password</p>
     <input id='twit-pass' type='text' />
     </Modal.Body>
-    <Modal.Body>
-    <Modal.Title>
-    Facebook
-    </Modal.Title>
-    <p>Username</p>
-    <input id='fb-username' type='text' />
-    <p>Password</p>
-    <input id='fb-pass' type='text' />
-    </Modal.Body>
     <Modal.Footer>
     <Button id='submit' bsStyle='primary' onClick={this.submitHandler}>
     Submit

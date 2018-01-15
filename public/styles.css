@@ -9,10 +9,18 @@
     border-width: 0px;
     border-radius: 0px;
     margin: 0px;
+    color: white;
 }
 
-.navbar-default * {
+.navbar-default .navbar-brand {
     color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-header .navbar-nav {
     margin: 0px;
 }
 
