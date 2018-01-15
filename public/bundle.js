@@ -9975,7 +9975,7 @@ var _Header = __webpack_require__(150);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Navigator = __webpack_require__(327);
+var _Navigator = __webpack_require__(328);
 
 var _Navigator2 = _interopRequireDefault(_Navigator);
 
@@ -39439,8 +39439,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//import { getInfo } from './tweet_puller.js'
-
 var UserInfo = function (_React$Component) {
     _inherits(UserInfo, _React$Component);
 
@@ -39451,9 +39449,12 @@ var UserInfo = function (_React$Component) {
 
         _this.handleShow = _this.handleShow.bind(_this);
         _this.handleClose = _this.handleClose.bind(_this);
+        _this.submitHandler = _this.submitHandler.bind(_this);
 
         _this.state = {
-            showModal: false
+            showModal: false,
+            showData: false,
+            userData: null
         };
         return _this;
     }
@@ -39476,13 +39477,14 @@ var UserInfo = function (_React$Component) {
         key: 'submitHandler',
         value: function submitHandler() {
             var username = document.getElementById('twit-username').value;
+            var self = this;
 
             console.log('submitted!' + username);
-            // send username data
             _axios2.default.post('/api/tweets', {
                 user: username
             }).then(function (res) {
-                console.log(res.data);
+                self.setState({ showData: true });
+                self.setState({ userData: res.data });
             }).catch(function (err) {
                 console.log(err);
             });
@@ -39534,28 +39536,12 @@ var UserInfo = function (_React$Component) {
                             null,
                             'Password'
                         ),
-                        _react2.default.createElement('input', { id: 'twit-pass', type: 'text' })
-                    ),
-                    _react2.default.createElement(
-                        _reactBootstrap.Modal.Body,
-                        null,
-                        _react2.default.createElement(
-                            _reactBootstrap.Modal.Title,
-                            null,
-                            'Facebook'
-                        ),
-                        _react2.default.createElement(
+                        _react2.default.createElement('input', { id: 'twit-pass', type: 'text' }),
+                        this.state.userData ? _react2.default.createElement(
                             'p',
                             null,
-                            'Username'
-                        ),
-                        _react2.default.createElement('input', { id: 'fb-username', type: 'text' }),
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            'Password'
-                        ),
-                        _react2.default.createElement('input', { id: 'fb-pass', type: 'text' })
+                            JSON.stringify(this.state.userData)
+                        ) : null
                     ),
                     _react2.default.createElement(
                         _reactBootstrap.Modal.Footer,
@@ -40467,7 +40453,8 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 327 */
+/* 327 */,
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
