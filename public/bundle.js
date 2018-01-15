@@ -11473,8 +11473,8 @@ var Header = function (_React$Component) {
                             null,
                             _react2.default.createElement(_UserInfo2.default, null),
                             _react2.default.createElement(
-                                _reactBootstrap.Button,
-                                { id: 'learn-more' },
+                                'a',
+                                { href: '/resources.html' },
                                 'Learn more'
                             )
                         )
