@@ -48,7 +48,7 @@ render() {
   return (
     <div id='UserInfo-container'>
     <Button bsStyle='primary' id='get-started' onClick={this.handleShow}>Get started</Button>
-
+    <a href='/resources.html'>Learn more</a>
     <Modal show={this.state.showModal} onHide={this.handleClose}>
         <Modal.Header closeButton>
             <Modal.Title>

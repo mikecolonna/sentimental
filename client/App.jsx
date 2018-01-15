@@ -7,8 +7,9 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Navigator />
+                {/* <Navigator /> */}
                 <Header />
+                {/* <Navigator /> */}
             </div>
         )
     }

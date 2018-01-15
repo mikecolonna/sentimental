@@ -10002,7 +10002,6 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Navigator2.default, null),
                 _react2.default.createElement(_Header2.default, null)
             );
         }
@@ -11458,25 +11457,39 @@ var Header = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { id: 'Header-container' },
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             'h1',
                             null,
+                            _react2.default.createElement('img', { src: 'logo-3.png', height: '70px', width: '70px' }),
                             'Sentimental.'
                         ),
                         _react2.default.createElement(
                             'p',
                             null,
-                            'Welcome to Sentimental, a web app that analyzes your social media feeds for signs of mental illness.'
+                            'Welcome to Sentimental, a web app that provides insight into your mental health using your social media.'
                         ),
                         _react2.default.createElement(
                             'span',
                             null,
-                            _react2.default.createElement(_UserInfo2.default, null),
-                            _react2.default.createElement(
-                                'a',
-                                { href: '/resources.html' },
-                                'Learn more'
-                            )
+                            _react2.default.createElement(_UserInfo2.default, null)
                         )
                     )
                 )
@@ -39497,6 +39510,11 @@ var UserInfo = function (_React$Component) {
                     _reactBootstrap.Button,
                     { bsStyle: 'primary', id: 'get-started', onClick: this.handleShow },
                     'Get started'
+                ),
+                _react2.default.createElement(
+                    'a',
+                    { href: '/resources.html' },
+                    'Learn more'
                 ),
                 _react2.default.createElement(
                     _reactBootstrap.Modal,

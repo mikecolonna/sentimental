@@ -1,10 +1,15 @@
 a { 
-  color: white
+    margin: 5px;
+    color: white
 }
+
 .jumbotron {
     background-color: #f9577d;
     font-family: "Futura", sans-serif;
     color: white;
+    height: 100vh;
+    /* margin-top: 10%; */
+    /* margin-bottom: 10%; */
 }
 
 .navbar {

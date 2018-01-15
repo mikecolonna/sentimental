@@ -8,13 +8,31 @@ export default class Header extends React.Component {
             <div>
                 <Jumbotron>
                     <div id='Header-container'>
-                        <h1>Sentimental.</h1>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <h1><img src='logo-3.png' height= '70px' width='70px'></img>Sentimental.</h1>
                         <p>
-                        Welcome to Sentimental, a web app that analyzes your social media feeds for signs of mental illness.
+                        Welcome to Sentimental, a web app that provides insight into your mental health using your social media.
                         </p>
                         <span>
                             <UserInfo />
-                            <a href='/resources.html'>Learn more</a>
+                            {/* <a href='/resources.html'>Learn more</a> */}
                         </span>
                     </div>
                 </Jumbotron>
