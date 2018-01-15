@@ -9975,7 +9975,7 @@ var _Header = __webpack_require__(150);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Navigator = __webpack_require__(328);
+var _Navigator = __webpack_require__(327);
 
 var _Navigator2 = _interopRequireDefault(_Navigator);
 
@@ -39453,7 +39453,6 @@ var UserInfo = function (_React$Component) {
 
         _this.state = {
             showModal: false,
-            showData: false,
             userData: null
         };
         return _this;
@@ -39483,7 +39482,6 @@ var UserInfo = function (_React$Component) {
             _axios2.default.post('/api/tweets', {
                 user: username
             }).then(function (res) {
-                self.setState({ showData: true });
                 self.setState({ userData: res.data });
             }).catch(function (err) {
                 console.log(err);
@@ -39509,12 +39507,12 @@ var UserInfo = function (_React$Component) {
                         _react2.default.createElement(
                             _reactBootstrap.Modal.Title,
                             null,
-                            'Let\'s get started'
+                            'Let\'s get started!'
                         ),
                         _react2.default.createElement(
                             'span',
                             null,
-                            'Enter your info!'
+                            'Enter the username of someone whose tweets you want to analyze.'
                         )
                     ),
                     _react2.default.createElement(
@@ -39526,19 +39524,13 @@ var UserInfo = function (_React$Component) {
                             'Twitter'
                         ),
                         _react2.default.createElement(
-                            'p',
+                            'span',
                             null,
-                            'Username'
+                            'Username  '
                         ),
                         _react2.default.createElement('input', { id: 'twit-username', type: 'text' }),
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            'Password'
-                        ),
-                        _react2.default.createElement('input', { id: 'twit-pass', type: 'text' }),
                         this.state.userData ? _react2.default.createElement(
-                            'p',
+                            'span',
                             null,
                             JSON.stringify(this.state.userData)
                         ) : null
@@ -40453,8 +40445,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 327 */,
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

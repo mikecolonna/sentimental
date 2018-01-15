@@ -11,7 +11,6 @@ export default class UserInfo extends React.Component {
 
     this.state = {
       showModal: false,
-      showData: false,
       userData: null
     };
   }
@@ -37,7 +36,6 @@ export default class UserInfo extends React.Component {
         user: username
     })
     .then(function(res) {
-        self.setState({ showData: true });
         self.setState({ userData: res.data });
     })
     .catch(function(err) {
@@ -54,22 +52,20 @@ render() {
     <Modal show={this.state.showModal} onHide={this.handleClose}>
         <Modal.Header closeButton>
             <Modal.Title>
-                Let's get started
+                Let's get started!
             </Modal.Title>
-            <span>Enter your info!</span>
+            <span>Enter the username of someone whose tweets you want to analyze.</span>
         </Modal.Header>
         <Modal.Body>
             <Modal.Title>
                 Twitter
             </Modal.Title>
-            <p>Username</p>
+            <span>Username  </span>
             <input id='twit-username' type='text' />
-            <p>Password</p>
-            <input id='twit-pass' type='text' />
             {this.state.userData ?
-                <p>
+                <span>
                     {JSON.stringify(this.state.userData)}
-                </p> : null}
+                </span> : null}
         </Modal.Body>
         <Modal.Footer>
             <Button id='submit' bsStyle='primary' onClick={this.submitHandler}>
