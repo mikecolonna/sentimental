@@ -9975,7 +9975,7 @@ var _Header = __webpack_require__(150);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Navigator = __webpack_require__(328);
+var _Navigator = __webpack_require__(327);
 
 var _Navigator2 = _interopRequireDefault(_Navigator);
 
@@ -11473,8 +11473,8 @@ var Header = function (_React$Component) {
                             null,
                             _react2.default.createElement(_UserInfo2.default, null),
                             _react2.default.createElement(
-                                _reactBootstrap.Button,
-                                { id: 'learn-more' },
+                                'a',
+                                { href: 'https://www.psychologytoday.com' },
                                 'Learn more'
                             )
                         )
@@ -40453,8 +40453,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 327 */,
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

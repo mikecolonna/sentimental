@@ -14,7 +14,7 @@ export default class Header extends React.Component {
                         </p>
                         <span>
                             <UserInfo />
-                            <Button id='learn-more'>Learn more</Button>
+                            <a href='https://www.psychologytoday.com'>Learn more</a>
                         </span>
                     </div>
                 </Jumbotron>
