@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="Click to continue..."></p>
+        <script>
+            var link = 'https://www.psychologytoday.com'
+            var add = "/us/therapists/mi/dexter"
+            var site = link.concat(add)
+        </script>
+        <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+        <script>
+            document.getElementById("clickMe").onclick = doFunction;
+            function doFunction() {
+                window.open(site);
+            }
+        </script>
+    </body>
+</html>
+
+
