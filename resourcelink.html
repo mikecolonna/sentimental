@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="format.css">
+    </head>
+    <body>
+        <div class="popup" onclick="redirectwindow()"> You will be redirected to a website with therapy centers nearby. Is this okay? 
+            <span class="popuptext" id="myPopup"> </span>
+        </div>>
+        <p id="Continue on..."></p>
+        <script>
+            var link = 'https://www.psychologytoday.com'
+            var add = "/us/therapists/mi/dexter"
+            var site = link.concat(add)
+        </script>
+        <input id="clickMe" type="button" value="Continue on..." onclick="doFunction();" />
+        <script>
+            document.getElementById("clickMe").onclick = doFunction;
+            function doFunction() {
+                window.open(site);
+            }
+        </script>
+        <script>
+            function redirectwindow() {
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }
+        </script>
+    </body>
+</html>
