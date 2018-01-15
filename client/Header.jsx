@@ -14,7 +14,7 @@ export default class Header extends React.Component {
                         </p>
                         <span>
                             <UserInfo />
-                            <a href='https://www.psychologytoday.com'>Learn more</a>
+                            <a href='/resources.html'>Learn more</a>
                         </span>
                     </div>
                 </Jumbotron>

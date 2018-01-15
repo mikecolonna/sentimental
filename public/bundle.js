@@ -11474,7 +11474,7 @@ var Header = function (_React$Component) {
                             _react2.default.createElement(_UserInfo2.default, null),
                             _react2.default.createElement(
                                 'a',
-                                { href: 'https://www.psychologytoday.com' },
+                                { href: '/resources.html' },
                                 'Learn more'
                             )
                         )
